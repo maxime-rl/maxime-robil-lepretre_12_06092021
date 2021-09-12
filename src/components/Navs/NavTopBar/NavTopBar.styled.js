@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { variablesStyle } from "../../../utils/styles/variables";
+import { Link } from "react-router-dom";
 
 export const nav = styled.nav`
   grid-area: nav-bar;
@@ -60,7 +61,7 @@ export const li = styled.li`
   }
 `;
 
-export const a = styled.a`
+export const a = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: center;

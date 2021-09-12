@@ -34,6 +34,10 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: inherit;
     color: inherit;
   }
+
+  .active-link {
+    text-decoration: underline;
+  }
 `;
 
 export default GlobalStyle;

@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { NavTopBar, NavActivities } from "../components";
+import { HomePage } from "../pages";
 
 function App() {
   return (
@@ -8,7 +9,10 @@ function App() {
       <NavTopBar />
       <NavActivities />
       <Switch>
-        <Route exact path="/user/12">
+        <Route exact path="/">
+          <HomePage />
+        </Route>
+        <Route path="/user/12">
           <h1>user 12</h1>
         </Route>
         <Route path="/user/18">
