@@ -1,7 +1,12 @@
-import { NavTopBar } from "../components";
+import { NavTopBar, NavActivities } from "../components";
 
 function App() {
-  return <NavTopBar />;
+  return (
+    <>
+      <NavTopBar />
+      <NavActivities />
+    </>
+  );
 }
 
 export default App;
