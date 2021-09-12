@@ -1,4 +1,14 @@
 {
   "extends": ["react-app"],
-  "rules": {}
+  "rules": {
+    "react/jsx-pascal-case": [
+      1,
+      {
+        "allowAllCaps": true,
+        "allowNamespace": true,
+        "allowLeadingUnderscore": false,
+        "ignore": []
+      }
+    ]
+  }
 }
