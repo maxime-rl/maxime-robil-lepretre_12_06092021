@@ -4,26 +4,26 @@ import logo from "../../../assets/logo.svg";
 
 export default function NavBar() {
   return (
-    <S.Nav aria-label="Globale de l'application">
-      <S.Ul>
-        <S.Li>
-          <S.A href="/#">
-            <S.Img src={logo} alt="logo SportSee" />
-          </S.A>
-        </S.Li>
-        <S.Li>
+    <S.nav aria-label="Global de l'application">
+      <S.ul>
+        <S.li>
+          <S.a href="/#">
+            <S.img src={logo} alt="logo SportSee" />
+          </S.a>
+        </S.li>
+        <S.li>
           <a href="/#">Accueil</a>
-        </S.Li>
-        <S.Li>
+        </S.li>
+        <S.li>
           <a href="/#">Profil</a>
-        </S.Li>
-        <S.Li>
+        </S.li>
+        <S.li>
           <a href="/#">Réglage</a>
-        </S.Li>
-        <S.Li>
+        </S.li>
+        <S.li>
           <a href="/#">Communauté</a>
-        </S.Li>
-      </S.Ul>
-    </S.Nav>
+        </S.li>
+      </S.ul>
+    </S.nav>
   );
 }

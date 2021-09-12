@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { variablesStyle } from "../../../utils/styles/variables";
 
-export const Nav = styled.nav`
+export const nav = styled.nav`
   grid-area: nav-bar;
   position: sticky;
   top: 0;
@@ -19,7 +19,7 @@ export const Nav = styled.nav`
   }
 `;
 
-export const Ul = styled.ul`
+export const ul = styled.ul`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -39,7 +39,7 @@ export const Ul = styled.ul`
   }
 `;
 
-export const Li = styled.li`
+export const li = styled.li`
   padding: 0 0 10px 0;
   &:first-child {
     padding: 0 0 20px 0;
@@ -60,13 +60,13 @@ export const Li = styled.li`
   }
 `;
 
-export const A = styled.a`
+export const a = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;
 `;
 
-export const Img = styled.img`
+export const img = styled.img`
   width: 115px;
   @media (min-width: 1024px) {
     width: 145px;
