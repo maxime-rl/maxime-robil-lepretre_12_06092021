@@ -1,12 +1,12 @@
 import React from "react";
 
-export default function Greeting() {
+export default function Greeting({ firstName }) {
   return (
-    <div>
+    <>
       <h1>
-        Bonjour <span>User firstName</span>
+        Bonjour <span>{firstName}</span>
       </h1>
       <p>Félicitations ! Vous avez explosé vos objectifs hier 👏</p>
-    </div>
+    </>
   );
 }
