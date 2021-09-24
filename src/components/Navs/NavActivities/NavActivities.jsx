@@ -1,7 +1,11 @@
 import React from "react";
 import * as S from "./NavActivities.styled";
 
-export default function NavBar() {
+/**
+ * Create a NavActivities component
+ * @function NavActivities
+ * */
+export default function NavActivities() {
   return (
     <S.nav aria-label="Activités tableau de bord">
       <S.ul>

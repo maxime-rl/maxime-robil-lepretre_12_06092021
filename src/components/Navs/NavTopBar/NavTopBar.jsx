@@ -3,7 +3,11 @@ import { NavLink } from "react-router-dom";
 import * as S from "./NavTopBar.styled";
 import logo from "../../../assets/logo.svg";
 
-export default function NavBar() {
+/**
+ * Create a NavTopBar component
+ * @function NavTopBar
+ * */
+export default function NavTopBar() {
   return (
     <S.nav aria-label="Global de l'application">
       <S.ul>

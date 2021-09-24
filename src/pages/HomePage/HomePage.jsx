@@ -1,6 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+/**
+ * Create a HomePage page component
+ * @function HomePage
+ */
 export default function HomePage() {
   return (
     <>

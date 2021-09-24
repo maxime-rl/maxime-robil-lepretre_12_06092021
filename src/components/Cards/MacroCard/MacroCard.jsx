@@ -1,6 +1,14 @@
 import React from "react";
 import * as S from "./MacroCard.styled";
 
+/**
+ * Create a MacroCard component
+ * @function MacroCard
+ * @param {string} iconBackgroundColor
+ * @param {string} iconSrc
+ * @param {string} value
+ * @param {string} macroType
+ * */
 export default function MacroCard({
   iconBackgroundColor,
   iconSrc,

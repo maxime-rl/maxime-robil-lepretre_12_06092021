@@ -9,6 +9,11 @@ import iconCarbohydrates from "../../../assets/icons/macros/icon-carbohydrates.s
 import iconLipids from "../../../assets/icons/macros/icon-lipids.svg";
 import iconProteins from "../../../assets/icons/macros/icon-proteins.svg";
 
+/**
+ * Create a MacroCardList component
+ * @function MacroCardList
+ * @param {object} keyData
+ * */
 export default function MacroCardList({ keyData }) {
   const totalCalories = addCommaAfterFirstDigit(keyData.calorieCount);
 

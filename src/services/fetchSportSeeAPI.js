@@ -47,6 +47,6 @@ function choiceOfEndpoint(userId, serviceType) {
 
     default:
       endPoint = `user/${userId}`;
-      return endPoint;
   }
+  return endPoint;
 }
