@@ -16,7 +16,7 @@ import { variablesStyle } from "../../../utils/styles/variables";
  * @param {string} userId
  */
 export default function RadarChartPerformances({ userId }) {
-  let [data, setData] = useState([]);
+  const [data, setData] = useState([]);
 
   /**
    * Performance data recovery
@@ -26,9 +26,9 @@ export default function RadarChartPerformances({ userId }) {
   useEffect(() => {
     const getData = async () => {
       const response = await getUserFetchData(userId, "performance");
-      const dataPerformance = response.data.data;
+      const performancesData = response.data.data;
 
-      setData(dataPerformance);
+      setData(performancesData);
     };
     getData();
   }, [userId]);
@@ -42,7 +42,7 @@ export default function RadarChartPerformances({ userId }) {
     6: "Cardio",
   };
 
-  data = data.map((elt) => ({
+  const performances = data.map((elt) => ({
     value: elt.value,
     kind: typeOfActivities[elt.kind],
   }));
@@ -52,7 +52,7 @@ export default function RadarChartPerformances({ userId }) {
       {/* START RadarChart */}
       <ResponsiveContainer width="100%" height="100%" aspect={1}>
         <RadarChart
-          data={data}
+          data={performances}
           height={258}
           width={258}
           margin={{ top: 15, right: 25, left: 25, bottom: 15 }}

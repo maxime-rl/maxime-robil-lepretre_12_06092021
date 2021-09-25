@@ -7,6 +7,7 @@ import {
   BarChartDailyActivity,
   LineChartAverageSessions,
   RadarChartPerformances,
+  PieChartScore,
 } from "../../components";
 import * as S from "./UserDashboardPage.styled";
 import { getUserFetchData } from "../../services/fetchSportSeeAPI";
@@ -45,9 +46,12 @@ export default function UserDashboardPage() {
         <Greeting firstName={userInfos.firstName} />
       </S.header>
       <MacroCardList keyData={keyData} />
+      {/* START Charts */}
       <BarChartDailyActivity userId={userId} />
       <LineChartAverageSessions userId={userId} />
       <RadarChartPerformances userId={userId} />
+      <PieChartScore userId={userId} />
+      {/* END Charts */}
     </>
   );
 }

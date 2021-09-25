@@ -16,7 +16,7 @@ import * as S from "./LineChartAverageSessions.styled";
  * @param {string} userId
  */
 export default function LineChartAverageSessions({ userId }) {
-  let [data, setData] = useState([]);
+  const [data, setData] = useState([]);
 
   /**
    * Average-sessions data recovery
@@ -26,9 +26,9 @@ export default function LineChartAverageSessions({ userId }) {
   useEffect(() => {
     const getData = async () => {
       const response = await getUserFetchData(userId, "average-sessions");
-      const sessions = response.data.sessions;
+      const averageSessionsData = response.data.sessions;
 
-      setData(sessions);
+      setData(averageSessionsData);
     };
     getData();
   }, [userId]);
@@ -43,7 +43,7 @@ export default function LineChartAverageSessions({ userId }) {
     7: "D",
   };
 
-  data = data.map((elt) => ({
+  const averageSessions = data.map((elt) => ({
     day: daysOfTheWeek[elt.day],
     sessionLength: elt.sessionLength,
   }));
@@ -54,7 +54,7 @@ export default function LineChartAverageSessions({ userId }) {
       {/* START LineChart */}
       <ResponsiveContainer width="100%" height="100%" aspect={1}>
         <LineChart
-          data={data}
+          data={averageSessions}
           width={258}
           height={258}
           margin={{ top: 0, right: 15, left: 15, bottom: 20 }}

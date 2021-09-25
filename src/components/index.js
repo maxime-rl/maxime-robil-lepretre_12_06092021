@@ -6,3 +6,4 @@ export { default as MacroCardList } from "./Cards/MacroCardList/MacroCardList";
 export { default as BarChartDailyActivity } from "./Charts/BarChartDailyActivity/BarChartDailyActivity";
 export { default as LineChartAverageSessions } from "./Charts/LineChartAverageSessions/LineChartAverageSessions";
 export { default as RadarChartPerformances } from "./Charts/RadarChartPerformances/RadarChartPerformances";
+export { default as PieChartScore } from "./Charts/PieChartScore/PieChartScore";
