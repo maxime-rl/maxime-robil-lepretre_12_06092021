@@ -11,6 +11,7 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
+import PropTypes from "prop-types";
 
 /**
  * Create a BarChartDailyActivity component
@@ -111,3 +112,10 @@ export default function BarChartDailyActivity({ userId }) {
     </S.section>
   );
 }
+
+/**
+ * PropTypes for the BarChartDailyActivity component
+ */
+BarChartDailyActivity.propTypes = {
+  userId: PropTypes.string.isRequired,
+};

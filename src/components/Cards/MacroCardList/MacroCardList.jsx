@@ -1,6 +1,8 @@
 import React from "react";
 import Card from "../MacroCard/MacroCard";
+import PropTypes from "prop-types";
 import * as S from "./MacroCardList.styled";
+
 // Utils
 import addCommaAfterFirstDigit from "../../../utils/addCommaAfterFirstDigit";
 // Icons
@@ -55,3 +57,10 @@ export default function MacroCardList({ keyData }) {
     </S.section>
   );
 }
+
+/**
+ * PropTypes for the MacroCardList component
+ */
+MacroCardList.propTypes = {
+  keyData: PropTypes.objectOf(PropTypes.number).isRequired,
+};

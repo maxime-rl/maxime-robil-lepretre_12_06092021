@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 export default function Greeting({ firstName }) {
   return (
@@ -10,3 +11,10 @@ export default function Greeting({ firstName }) {
     </>
   );
 }
+
+/**
+ * PropTypes for the Greeting component
+ */
+Greeting.propTypes = {
+  firstName: PropTypes.string.isRequired,
+};
