@@ -57,7 +57,7 @@ export default function LineChartAverageSessions({ userId }) {
 
   return (
     <S.container>
-      <S.h2>Durée moyenne des sessions</S.h2>
+      <S.h3>Durée moyenne des sessions</S.h3>
       {/* START LineChart */}
       <ResponsiveContainer width="100%" height="100%" aspect={1}>
         <LineChart

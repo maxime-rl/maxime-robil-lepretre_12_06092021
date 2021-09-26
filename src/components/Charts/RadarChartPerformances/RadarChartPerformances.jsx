@@ -56,6 +56,7 @@ export default function RadarChartPerformances({ userId }) {
 
   return (
     <S.container>
+      <h3 className="sr-only">Performances</h3>
       {/* START RadarChart */}
       <ResponsiveContainer width="100%" height="100%" aspect={1}>
         <RadarChart

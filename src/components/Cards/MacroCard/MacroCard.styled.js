@@ -10,6 +10,9 @@ export const container = styled.div`
   height: 94px;
   background-color: ${variablesStyle.colorGrayLighten};
   border-radius: ${variablesStyle.radius};
+  @media (min-width: 1024px) {
+    margin: 7.5px 0 7.5px 7.5px;
+  }
   @media (min-width: 1440px) {
     margin: 15px;
     width: 258px;

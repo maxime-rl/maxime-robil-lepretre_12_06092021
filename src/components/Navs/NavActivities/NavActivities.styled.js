@@ -6,8 +6,8 @@ import iconSwimming from "../../../assets/icons/activities/icon-swimming.svg";
 import iconYoga from "../../../assets/icons/activities/icon-yoga.svg";
 
 export const nav = styled.nav`
-  grid-area: nav-activities;
   position: fixed;
+  z-index: 5;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -17,13 +17,16 @@ export const nav = styled.nav`
   min-height: 75px;
   background: ${variablesStyle.colorBlack};
   @media (min-width: 1024px) {
+    position: inherit;
     flex-direction: column;
+    justify-content: flex-start;
     left: 0;
     bottom: 0;
     top: 0;
-    height: 100%;
     max-width: 110px;
-    }
+  }
+  @media (min-width: 1440px) {
+    justify-content: center;
   }
 `;
 
@@ -38,6 +41,9 @@ export const ul = styled.ul`
   background: ${variablesStyle.colorBlack};
   @media (min-width: 1024px) {
     flex-direction: column;
+    height: 76%;
+  }
+  @media (min-width: 1440px) {
     height: 65%;
   }
 `;

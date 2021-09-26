@@ -47,7 +47,7 @@ export default function PieChartScore({ userId }) {
 
   return (
     <S.container>
-      <S.h2>Score</S.h2>
+      <S.h3>Score</S.h3>
       <S.backgroundCircle>
         <S.label>
           <S.percentage>{percentageScoreValue}%</S.percentage>

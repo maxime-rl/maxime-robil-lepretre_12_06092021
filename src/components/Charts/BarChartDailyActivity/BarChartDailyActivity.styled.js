@@ -1,13 +1,23 @@
 import styled from "styled-components";
 import { variablesStyle } from "../../../utils/styles/variables";
 
-export const section = styled.section`
+export const container = styled.div`
+  grid-area: chart-daily-activity;
   position: relative;
+  margin: 7.5px 0;
+  width: 100%;
+  height: 258px;
   background-color: ${variablesStyle.colorGrayLighten};
   border-radius: ${variablesStyle.radius};
   @media (min-width: 1024px) {
+    margin: 0 0 7.5px 0;
     width: 684px;
     height: 262.5px;
+  }
+  @media (min-width: 1440px) {
+    margin: 0 0 15px 0;
+    width: 834px;
+    height: 320px;
   }
 `;
 
@@ -20,7 +30,7 @@ export const header = styled.header`
   width: calc(100% - 20px);
 `;
 
-export const h2 = styled.h2`
+export const h3 = styled.h3`
   font-size: 1.5rem;
   font-weight: 500;
   color: ${variablesStyle.colorGrayDarken};
