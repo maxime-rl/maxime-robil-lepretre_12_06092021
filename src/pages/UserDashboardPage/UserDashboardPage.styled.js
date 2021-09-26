@@ -12,8 +12,8 @@ export const section = styled.section`
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    padding: 0 15px 45px 15px;
-    max-width: 915px;
+    padding: 0 0 45px 15px;
+    max-width: 900px;
   }
   @media (min-width: 1440px) {
     padding: 0 15px 55px 15px;

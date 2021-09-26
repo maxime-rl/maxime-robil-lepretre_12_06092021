@@ -6,7 +6,7 @@ export const container = styled.div`
   justify-content: start;
   align-items: center;
   margin: 7.5px;
-  width: 185px;
+  width: 180px;
   height: 94px;
   background-color: ${variablesStyle.colorGrayLighten};
   border-radius: ${variablesStyle.radius};

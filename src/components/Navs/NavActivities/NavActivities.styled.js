@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+// ICONS
 import { variablesStyle } from "../../../utils/styles/variables";
 import iconBodybuilding from "../../../assets/icons/activities/icon-bodybuilding.svg";
 import iconCycling from "../../../assets/icons/activities/icon-cycling.svg";
@@ -55,7 +57,7 @@ export const li = styled.li`
   }
 `;
 
-export const a = styled.a`
+export const a = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: center;

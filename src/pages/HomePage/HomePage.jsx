@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import * as S from "./HomePage.styled";
 
 /**
  * Create a HomePage page component
@@ -8,19 +8,19 @@ import { Link } from "react-router-dom";
 export default function HomePage() {
   return (
     <>
-      <main>
-        <h1>Bienvenue sur SportSee</h1>
+      <S.main>
+        <S.h1>Bienvenue sur SportSee</S.h1>
         <nav aria-label="Des différents utilisateurs disponibles">
-          <ul>
+          <S.ul>
+            <S.li>
+              <S.a to="/user/12">Utilisateur 12</S.a>
+            </S.li>
             <li>
-              <Link to="/user/12">User 12</Link>
+              <S.a to="/user/18">Utilisateur 18</S.a>
             </li>
-            <li>
-              <Link to="/user/18">User 18</Link>
-            </li>
-          </ul>
+          </S.ul>
         </nav>
-      </main>
+      </S.main>
     </>
   );
 }
