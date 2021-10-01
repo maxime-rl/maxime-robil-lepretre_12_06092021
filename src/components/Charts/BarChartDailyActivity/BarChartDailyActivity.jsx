@@ -93,7 +93,7 @@ export default function BarChartDailyActivity({ userId }) {
             ]}
             hide={true}
           />
-          <Tooltip />
+          <Tooltip content={<CustomTooltip />} />
           <Bar
             yAxisId="kg"
             dataKey="kilogram"
@@ -114,8 +114,32 @@ export default function BarChartDailyActivity({ userId }) {
 }
 
 /**
- * PropTypes for the BarChartDailyActivity component
+ * Create a CustomTooltip to BarChart
+ * @function CustomTooltip
+ * @param {bollean} active
+ * @param {array} payload
+ */
+function CustomTooltip({ active, payload }) {
+  if (active && payload) {
+    return (
+      <S.tooltipContainer>
+        <S.tooltipElt>{`${payload[0].value} kg`}</S.tooltipElt>
+        <S.tooltipElt>{`${payload[1].value} kCal`}</S.tooltipElt>
+      </S.tooltipContainer>
+    );
+  }
+
+  return null;
+}
+
+/**
+ * PropTypes for the BarChartDailyActivity & CustomTooltip
  */
 BarChartDailyActivity.propTypes = {
   userId: PropTypes.string.isRequired,
+};
+
+CustomTooltip.propTypes = {
+  active: PropTypes.bool,
+  payload: PropTypes.array,
 };

@@ -62,3 +62,19 @@ export const p = styled.p`
     margin-left: 50px;
   }
 `;
+
+/**
+ * CustomTooltip
+ */
+export const tooltipContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  background-color: ${variablesStyle.colorPrimaryDarken};
+`;
+
+export const tooltipElt = styled.span`
+  padding: 9px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: white;
+`;
