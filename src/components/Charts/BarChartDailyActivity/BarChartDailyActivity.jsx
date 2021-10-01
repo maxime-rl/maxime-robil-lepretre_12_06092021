@@ -11,6 +11,7 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
+import PropTypes from "prop-types";
 
 /**
  * Create a BarChartDailyActivity component
@@ -43,9 +44,9 @@ export default function BarChartDailyActivity({ userId }) {
   }, [userId]);
 
   return (
-    <S.section>
+    <S.container>
       <S.header>
-        <S.h2>Activité quotidienne</S.h2>
+        <S.h3>Activité quotidienne</S.h3>
         <S.div>
           <S.p>Poids (kg)</S.p>
           <S.p color="true">Calories brûlées (kCal)</S.p>
@@ -108,6 +109,13 @@ export default function BarChartDailyActivity({ userId }) {
         </BarChart>
       </ResponsiveContainer>
       {/* END BarChart */}
-    </S.section>
+    </S.container>
   );
 }
+
+/**
+ * PropTypes for the BarChartDailyActivity component
+ */
+BarChartDailyActivity.propTypes = {
+  userId: PropTypes.string.isRequired,
+};

@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { NavTopBar } from "../components";
-import { HomePage, UserDashboardPage } from "../pages";
+import { HomePage, UserDashboardPage, ErrorPage } from "../pages";
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
           <UserDashboardPage />
         </Route>
         <Route path="*">
-          <h1>Error</h1>
+          <ErrorPage />
         </Route>
       </Switch>
     </Router>

@@ -9,6 +9,7 @@ import {
   RadarChartPerformances,
   PieChartScore,
 } from "../../components";
+import ErrorPage from "../ErrorPage/ErrorPage";
 import * as S from "./UserDashboardPage.styled";
 import { getUserFetchData } from "../../services/fetchSportSeeAPI";
 
@@ -28,7 +29,7 @@ export default function UserDashboardPage() {
   useEffect(() => {
     const getData = async () => {
       const response = await getUserFetchData(userId);
-      if (!response) return console.log("response error");
+      if (!response) return <ErrorPage />;
 
       setData(response.data);
     };
@@ -40,18 +41,25 @@ export default function UserDashboardPage() {
   const { userInfos, keyData } = data;
 
   return (
-    <>
+    <S.main>
       <NavActivities />
-      <S.header>
-        <Greeting firstName={userInfos.firstName} />
-      </S.header>
-      <MacroCardList keyData={keyData} />
-      {/* START Charts */}
-      <BarChartDailyActivity userId={userId} />
-      <LineChartAverageSessions userId={userId} />
-      <RadarChartPerformances userId={userId} />
-      <PieChartScore userId={userId} />
-      {/* END Charts */}
-    </>
+      <S.section>
+        <h1 className="sr-only">Tableau de bord</h1>
+        <S.header>
+          <Greeting firstName={userInfos.firstName} />
+        </S.header>
+        <S.userSportsInfo>
+          <MacroCardList keyData={keyData} />
+          {/* START Charts */}
+          <S.chartsContainer>
+            <BarChartDailyActivity userId={userId} />
+            <LineChartAverageSessions userId={userId} />
+            <RadarChartPerformances userId={userId} />
+            <PieChartScore userId={userId} />
+          </S.chartsContainer>
+          {/* END Charts */}
+        </S.userSportsInfo>
+      </S.section>
+    </S.main>
   );
 }

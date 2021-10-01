@@ -3,7 +3,6 @@ import { variablesStyle } from "../../../utils/styles/variables";
 import { Link } from "react-router-dom";
 
 export const nav = styled.nav`
-  grid-area: nav-bar;
   position: sticky;
   top: 0;
   z-index: 10;

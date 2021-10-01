@@ -1,12 +1,21 @@
 import React from "react";
+import PropTypes from "prop-types";
+import * as S from "./Greeting.styled";
 
 export default function Greeting({ firstName }) {
   return (
     <>
-      <h1>
-        Bonjour <span>{firstName}</span>
-      </h1>
-      <p>Félicitations ! Vous avez explosé vos objectifs hier 👏</p>
+      <S.h2>
+        Bonjour <S.userFirstName>{firstName}</S.userFirstName>
+      </S.h2>
+      <S.p>Félicitations ! Vous avez explosé vos objectifs hier 👏</S.p>
     </>
   );
 }
+
+/**
+ * PropTypes for the Greeting component
+ */
+Greeting.propTypes = {
+  firstName: PropTypes.string.isRequired,
+};

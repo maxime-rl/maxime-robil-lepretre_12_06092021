@@ -9,6 +9,7 @@ import {
   YAxis,
 } from "recharts";
 import * as S from "./LineChartAverageSessions.styled";
+import PropTypes from "prop-types";
 
 /**
  * Create a LineChartAverageSessions component
@@ -33,6 +34,9 @@ export default function LineChartAverageSessions({ userId }) {
     getData();
   }, [userId]);
 
+  /**
+   * Create new object for the initials of the days of the week
+   */
   const daysOfTheWeek = {
     1: "L",
     2: "M",
@@ -43,6 +47,9 @@ export default function LineChartAverageSessions({ userId }) {
     7: "D",
   };
 
+  /**
+   * Editing data using the initials of the days of the week
+   */
   const averageSessions = data.map((elt) => ({
     day: daysOfTheWeek[elt.day],
     sessionLength: elt.sessionLength,
@@ -50,7 +57,7 @@ export default function LineChartAverageSessions({ userId }) {
 
   return (
     <S.container>
-      <S.h2>Durée moyenne des sessions</S.h2>
+      <S.h3>Durée moyenne des sessions</S.h3>
       {/* START LineChart */}
       <ResponsiveContainer width="100%" height="100%" aspect={1}>
         <LineChart
@@ -99,3 +106,10 @@ export default function LineChartAverageSessions({ userId }) {
     </S.container>
   );
 }
+
+/**
+ * PropTypes for the LineChartAverageSessions component
+ */
+LineChartAverageSessions.propTypes = {
+  userId: PropTypes.string.isRequired,
+};

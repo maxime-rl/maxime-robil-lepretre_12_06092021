@@ -1,6 +1,8 @@
 import React from "react";
 import Card from "../MacroCard/MacroCard";
+import PropTypes from "prop-types";
 import * as S from "./MacroCardList.styled";
+
 // Utils
 import addCommaAfterFirstDigit from "../../../utils/addCommaAfterFirstDigit";
 // Icons
@@ -18,7 +20,7 @@ export default function MacroCardList({ keyData }) {
   const totalCalories = addCommaAfterFirstDigit(keyData.calorieCount);
 
   return (
-    <S.section>
+    <S.container>
       {Object.entries(keyData).map(([type, value]) => (
         <Card
           key={`${type}-${value}`}
@@ -52,6 +54,13 @@ export default function MacroCardList({ keyData }) {
           value={type === "calorieCount" ? totalCalories + "kCal" : value + "g"}
         />
       ))}
-    </S.section>
+    </S.container>
   );
 }
+
+/**
+ * PropTypes for the MacroCardList component
+ */
+MacroCardList.propTypes = {
+  keyData: PropTypes.objectOf(PropTypes.number).isRequired,
+};

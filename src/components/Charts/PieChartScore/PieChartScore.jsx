@@ -3,6 +3,7 @@ import { getUserFetchData } from "../../../services/fetchSportSeeAPI";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 import * as S from "./PieChartScore.styled";
 import { variablesStyle } from "../../../utils/styles/variables";
+import PropTypes from "prop-types";
 
 /**
  * Create a PieChartScore component
@@ -27,8 +28,14 @@ export default function PieChartScore({ userId }) {
     getData();
   }, [userId]);
 
+  /**
+   * Transformation of score data into percentage
+   */
   const percentageScoreValue = (data.todayScore || data.score) * 100;
 
+  /**
+   * Array with a new score used for the comparison between score data and 1
+   */
   const score = [
     {
       scoreValue: data.todayScore || data.score,
@@ -40,7 +47,7 @@ export default function PieChartScore({ userId }) {
 
   return (
     <S.container>
-      <S.h2>Score</S.h2>
+      <S.h3>Score</S.h3>
       <S.backgroundCircle>
         <S.label>
           <S.percentage>{percentageScoreValue}%</S.percentage>
@@ -68,3 +75,10 @@ export default function PieChartScore({ userId }) {
     </S.container>
   );
 }
+
+/**
+ * PropTypes for the PieChartScore component
+ */
+PieChartScore.propTypes = {
+  userId: PropTypes.string.isRequired,
+};

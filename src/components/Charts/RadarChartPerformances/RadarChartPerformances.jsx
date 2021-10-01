@@ -9,6 +9,7 @@ import {
 } from "recharts";
 import * as S from "./RadarChartPerformances.styled";
 import { variablesStyle } from "../../../utils/styles/variables";
+import PropTypes from "prop-types";
 
 /**
  * Create a RadarChartPerformances component
@@ -33,7 +34,10 @@ export default function RadarChartPerformances({ userId }) {
     getData();
   }, [userId]);
 
-  const typeOfActivities = {
+  /**
+   * Create new object for UI performance kind
+   */
+  const performanceKind = {
     1: "Intensité",
     2: "Vitesse",
     3: "Force",
@@ -42,13 +46,17 @@ export default function RadarChartPerformances({ userId }) {
     6: "Cardio",
   };
 
+  /**
+   * Editing data with the new UI performance kind object
+   */
   const performances = data.map((elt) => ({
     value: elt.value,
-    kind: typeOfActivities[elt.kind],
+    kind: performanceKind[elt.kind],
   }));
 
   return (
     <S.container>
+      <h3 className="sr-only">Performances</h3>
       {/* START RadarChart */}
       <ResponsiveContainer width="100%" height="100%" aspect={1}>
         <RadarChart
@@ -80,3 +88,10 @@ export default function RadarChartPerformances({ userId }) {
     </S.container>
   );
 }
+
+/**
+ * PropTypes for the RadarChartPerformances component
+ */
+RadarChartPerformances.propTypes = {
+  userId: PropTypes.string.isRequired,
+};

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import * as S from "./MacroCard.styled";
 
 /**
@@ -27,3 +28,13 @@ export default function MacroCard({
     </S.container>
   );
 }
+
+/**
+ * PropTypes for the MacroCard component
+ */
+MacroCard.propTypes = {
+  iconBackgroundColor: PropTypes.string.isRequired,
+  iconSrc: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  macroType: PropTypes.string.isRequired,
+};

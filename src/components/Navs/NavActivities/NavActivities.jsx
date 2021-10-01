@@ -10,22 +10,22 @@ export default function NavActivities() {
     <S.nav aria-label="Activités tableau de bord">
       <S.ul>
         <S.li>
-          <S.a href="/#" aria-label="Informations sur le yoga">
+          <S.a to="/yoga" aria-label="Informations sur le yoga">
             <S.i yoga aria-hidden="true" title="Yoga" />
           </S.a>
         </S.li>
         <S.li>
-          <S.a href="/#" aria-label="Informations sur la natation">
+          <S.a to="/natation" aria-label="Informations sur la natation">
             <S.i swimming aria-hidden="true" title="Natation" />
           </S.a>
         </S.li>
         <S.li>
-          <S.a href="/#" aria-label="Informations sur le cyclisme">
+          <S.a to="/cyclisme" aria-label="Informations sur le cyclisme">
             <S.i cycling aria-hidden="true" title="Cyclisme" />
           </S.a>
         </S.li>
         <S.li>
-          <S.a href="/#" aria-label="Informations sur le bodybuilding">
+          <S.a to="/bodybuilding" aria-label="Informations sur le bodybuilding">
             <S.i aria-hidden="true" title="Bodybuilding" />
           </S.a>
         </S.li>
