@@ -32,3 +32,14 @@ export const h3 = styled.h3`
   color: ${variablesStyle.colorWhite};
   opacity: 0.5;
 `;
+
+/**
+ * CustomTooltip
+ */
+export const tooltipContainer = styled.div`
+  padding: 9px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: ${variablesStyle.colorBlack};
+  background-color: ${variablesStyle.colorWhite};
+`;

@@ -10,6 +10,7 @@ import {
 } from "recharts";
 import * as S from "./LineChartAverageSessions.styled";
 import PropTypes from "prop-types";
+import { variablesStyle } from "../../../utils/styles/variables";
 
 /**
  * Create a LineChartAverageSessions component
@@ -83,8 +84,9 @@ export default function LineChartAverageSessions({ userId }) {
             domain={[0, "dataMax + 80"]}
           ></YAxis>
           <Tooltip
+            content={<CustomTooltip />}
             cursor={{
-              stroke: "rgba(0, 0, 0, 0.1)",
+              stroke: `${variablesStyle.colorPrimaryDarken}`,
               strokeWidth: 30,
             }}
           />
@@ -108,8 +110,27 @@ export default function LineChartAverageSessions({ userId }) {
 }
 
 /**
- * PropTypes for the LineChartAverageSessions component
+ * Create a CustomTooltip to LineChart
+ * @function CustomTooltip
+ * @param {bollean} active
+ * @param {array} payload
+ */
+function CustomTooltip({ active, payload }) {
+  if (active && payload) {
+    return <S.tooltipContainer>{`${payload[0].value} min`}</S.tooltipContainer>;
+  }
+
+  return null;
+}
+
+/**
+ * PropTypes for the LineChartAverageSessions & CustomTooltip
  */
 LineChartAverageSessions.propTypes = {
   userId: PropTypes.string.isRequired,
+};
+
+CustomTooltip.propTypes = {
+  active: PropTypes.bool,
+  payload: PropTypes.array,
 };
