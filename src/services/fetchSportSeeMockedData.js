@@ -1,20 +1,16 @@
 import axios from "axios";
 
-const axiosInstance = axios.create({
-  baseURL: "http://localhost:3000",
-});
-
 /**
  * @param {string} userId
  * @param {string} serviceType four type of service available :
  * "activity", "average-sessions", "performance", and user infos (first default service)
  * @returns data sportSee or error
  */
-export async function getUserFetchData(userId, serviceType) {
-  let endpoint = choiceOfEndpoint(userId, serviceType);
+export async function getUserMockedData(userId, serviceType) {
+  let endpoint = choiceOfEndpointToMockedData(userId, serviceType);
 
   try {
-    const response = await axiosInstance.get(endpoint);
+    const response = await axios.get(endpoint);
 
     return response.data;
   } catch (error) {
@@ -28,24 +24,25 @@ export async function getUserFetchData(userId, serviceType) {
  * @param {string} serviceType
  * @returns the endpoint matching with the selected type of service
  */
-function choiceOfEndpoint(userId, serviceType) {
-  let endPoint = "";
+function choiceOfEndpointToMockedData(userId, serviceType) {
+  let mockEndPoint = "";
 
   switch (serviceType) {
     case "activity":
-      endPoint = `user/${userId}/activity`;
+      mockEndPoint = `/user/${userId}/activity.json`;
       break;
 
     case "average-sessions":
-      endPoint = `user/${userId}/average-sessions`;
+      mockEndPoint = `/user/${userId}/average-sessions.json`;
       break;
 
     case "performance":
-      endPoint = `user/${userId}/performance`;
+      mockEndPoint = `/user/${userId}/performance.json`;
       break;
 
     default:
-      endPoint = `user/${userId}`;
+      mockEndPoint = `/user/${userId}.json`;
   }
-  return endPoint;
+
+  return mockEndPoint;
 }

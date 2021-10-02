@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getUserFetchData } from "../../../services/fetchSportSeeAPI";
+import { getUserMockedData } from "../../../services/fetchSportSeeMockedData";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 import * as S from "./PieChartScore.styled";
 import { variablesStyle } from "../../../utils/styles/variables";
@@ -15,12 +15,12 @@ export default function PieChartScore({ userId }) {
 
   /**
    * Score data recovery
-   * @requires module:services/fetchSportSeeAPI
+   * @requires module:services/getUserMockedData
    * @returns {object} data
    */
   useEffect(() => {
     const getData = async () => {
-      const response = await getUserFetchData(userId);
+      const response = await getUserMockedData(userId);
       const scoreData = response.data;
 
       setData(scoreData);

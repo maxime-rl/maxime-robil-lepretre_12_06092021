@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getUserFetchData } from "../../../services/fetchSportSeeAPI";
+import { getUserMockedData } from "../../../services/fetchSportSeeMockedData";
 import {
   Radar,
   RadarChart,
@@ -22,12 +22,12 @@ export default function RadarChartPerformances({ userId }) {
 
   /**
    * Performance data recovery
-   * @requires module:services/fetchSportSeeAPI
+   * @requires module:services/getUserMockedData
    * @returns {object} data
    */
   useEffect(() => {
     const getData = async () => {
-      const response = await getUserFetchData(userId, "performance");
+      const response = await getUserMockedData(userId, "performance");
       const performancesData = response.data.data;
 
       setData(performancesData);

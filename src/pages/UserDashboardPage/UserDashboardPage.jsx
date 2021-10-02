@@ -10,7 +10,7 @@ import {
   PieChartScore,
 } from "../../components";
 import * as S from "./UserDashboardPage.styled";
-import { getUserFetchData } from "../../services/fetchSportSeeAPI";
+import { getUserMockedData } from "../../services/fetchSportSeeMockedData";
 
 /**
  * Create a UserDashboardPage page component
@@ -22,12 +22,12 @@ export default function UserDashboardPage() {
 
   /**
    * Default data recovery
-   * @requires module:services/fetchSportSeeAPI
+   * @requires module:services/getUserMockedData
    * @returns {object} data
    */
   useEffect(() => {
     const getData = async () => {
-      const response = await getUserFetchData(userId);
+      const response = await getUserMockedData(userId);
 
       setData(response.data);
     };

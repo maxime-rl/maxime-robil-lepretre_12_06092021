@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getUserFetchData } from "../../../services/fetchSportSeeAPI";
+import { getUserMockedData } from "../../../services/fetchSportSeeMockedData";
 import * as S from "./BarChartDailyActivity.styled";
 import { variablesStyle } from "../../../utils/styles/variables";
 import {
@@ -23,12 +23,12 @@ export default function BarChartDailyActivity({ userId }) {
 
   /**
    * Activity data recovery
-   * @requires module:services/fetchSportSeeAPI
+   * @requires module:services/getUserMockedData
    * @returns {object} data
    */
   useEffect(() => {
     const getData = async () => {
-      const response = await getUserFetchData(userId, "activity");
+      const response = await getUserMockedData(userId, "activity");
       const sessions = response.data.sessions;
 
       for (let i = 0; i < sessions.length; i++) {

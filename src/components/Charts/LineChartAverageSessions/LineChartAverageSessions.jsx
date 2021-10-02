@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getUserFetchData } from "../../../services/fetchSportSeeAPI";
+import { getUserMockedData } from "../../../services/fetchSportSeeMockedData";
 import {
   LineChart,
   ResponsiveContainer,
@@ -22,12 +22,12 @@ export default function LineChartAverageSessions({ userId }) {
 
   /**
    * Average-sessions data recovery
-   * @requires module:services/fetchSportSeeAPI
+   * @requires module:services/getUserMockedData
    * @returns {object} data
    */
   useEffect(() => {
     const getData = async () => {
-      const response = await getUserFetchData(userId, "average-sessions");
+      const response = await getUserMockedData(userId, "average-sessions");
       const averageSessionsData = response.data.sessions;
 
       setData(averageSessionsData);
