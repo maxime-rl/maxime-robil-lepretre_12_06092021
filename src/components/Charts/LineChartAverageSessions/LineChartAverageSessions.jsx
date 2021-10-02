@@ -101,6 +101,7 @@ export default function LineChartAverageSessions({ userId }) {
               strokeWidth: 4,
               r: 6,
             }}
+            isAnimationActive={false}
           />
         </LineChart>
       </ResponsiveContainer>

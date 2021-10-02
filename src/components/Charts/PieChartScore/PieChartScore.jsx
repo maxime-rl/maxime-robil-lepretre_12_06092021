@@ -66,6 +66,7 @@ export default function PieChartScore({ userId }) {
             endAngle={450}
             fill="transparent"
             stroke="transparent"
+            animationDuration={700}
           >
             <Cell fill={`${variablesStyle.colorPrimary}`} cornerRadius={50} />
           </Pie>

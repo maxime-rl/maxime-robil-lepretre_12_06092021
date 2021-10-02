@@ -6,6 +6,7 @@ import {
   ResponsiveContainer,
   PolarGrid,
   PolarAngleAxis,
+  PolarRadiusAxis,
 } from "recharts";
 import * as S from "./RadarChartPerformances.styled";
 import { variablesStyle } from "../../../utils/styles/variables";
@@ -66,6 +67,7 @@ export default function RadarChartPerformances({ userId }) {
           margin={{ top: 15, right: 25, left: 25, bottom: 15 }}
         >
           <PolarGrid radialLines={false} />
+          <PolarRadiusAxis axisLine={false} tick={false} tickCount={6} />
           <PolarAngleAxis
             dataKey="kind"
             stroke="white"

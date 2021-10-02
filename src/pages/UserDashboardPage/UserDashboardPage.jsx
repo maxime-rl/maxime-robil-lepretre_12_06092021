@@ -9,7 +9,6 @@ import {
   RadarChartPerformances,
   PieChartScore,
 } from "../../components";
-import ErrorPage from "../ErrorPage/ErrorPage";
 import * as S from "./UserDashboardPage.styled";
 import { getUserFetchData } from "../../services/fetchSportSeeAPI";
 
@@ -29,7 +28,6 @@ export default function UserDashboardPage() {
   useEffect(() => {
     const getData = async () => {
       const response = await getUserFetchData(userId);
-      if (!response) return <ErrorPage />;
 
       setData(response.data);
     };
