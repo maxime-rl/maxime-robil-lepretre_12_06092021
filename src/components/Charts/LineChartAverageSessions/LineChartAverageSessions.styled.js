@@ -24,6 +24,7 @@ export const container = styled.div`
 
 export const h3 = styled.h3`
   position: absolute;
+  z-index: 10;
   padding: 18px 0 0 30px;
   max-width: 190px;
   font-size: 15px;

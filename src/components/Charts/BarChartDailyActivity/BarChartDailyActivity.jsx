@@ -31,7 +31,7 @@ export default function BarChartDailyActivity({ userId }) {
       const response = await getUserFetchData(userId, "activity");
       const sessions = response.data.sessions;
 
-      for (let i = 0, length = sessions.length; i < length; i++) {
+      for (let i = 0; i < sessions.length; i++) {
         sessions[i] = {
           ...sessions[i],
           day: i + 1,

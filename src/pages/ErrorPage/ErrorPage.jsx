@@ -1,6 +1,10 @@
 import React from "react";
 import * as S from "./ErrorPage.styled";
 
+/**
+ * Create a ErrorPage component
+ * @function ErrorPage
+ */
 export default function ErrorPage() {
   return (
     <S.section>
@@ -8,7 +12,7 @@ export default function ErrorPage() {
         <S.error>404</S.error>
         <S.errorDescription>
           Oups ! La page que vous demandez n'existe pas, ou n'est pas encore
-          disponnible (MVP)
+          disponible (MVP)
         </S.errorDescription>
       </S.h1>
       <S.a to="/">Retourner sur la page d'accueil</S.a>
