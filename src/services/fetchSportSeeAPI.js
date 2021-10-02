@@ -15,7 +15,6 @@ export async function getUserFetchData(userId, serviceType) {
 
   try {
     const response = await axiosInstance.get(endpoint);
-    // const responseMocked = await axios.get("/data/data.json");
 
     return response.data;
   } catch (error) {

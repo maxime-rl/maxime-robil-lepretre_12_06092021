@@ -2,6 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import * as S from "./Greeting.styled";
 
+/**
+ * Create a Greeting component
+ * @function Greeting
+ * @param {string} firstName
+ */
 export default function Greeting({ firstName }) {
   return (
     <>
