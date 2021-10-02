@@ -33,6 +33,7 @@ export const nav = styled.nav`
 `;
 
 export const ul = styled.ul`
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -46,6 +47,7 @@ export const ul = styled.ul`
     height: 76%;
   }
   @media (min-width: 1440px) {
+    top: -70px;
     height: 65%;
   }
 `;

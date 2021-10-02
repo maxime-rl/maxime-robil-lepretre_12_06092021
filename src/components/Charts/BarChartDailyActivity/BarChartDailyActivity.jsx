@@ -56,6 +56,8 @@ export default function BarChartDailyActivity({ userId }) {
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
           data={data}
+          width={684}
+          height={262.5}
           barGap={8}
           barCategoryGap={25}
           margin={{ top: 80, right: 48, bottom: 32, left: 48 }}
@@ -99,12 +101,14 @@ export default function BarChartDailyActivity({ userId }) {
             dataKey="kilogram"
             fill={`${variablesStyle.colorGrayDarken}`}
             radius={[25, 25, 0, 0]}
+            animationDuration={1300}
           />
           <Bar
             yAxisId="kCal"
             dataKey="calories"
             fill={`${variablesStyle.colorPrimary}`}
             radius={[25, 25, 0, 0]}
+            animationDuration={1300}
           />
         </BarChart>
       </ResponsiveContainer>
