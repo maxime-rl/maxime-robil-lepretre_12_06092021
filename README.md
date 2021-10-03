@@ -33,7 +33,7 @@ This project was bootstrapped with [Create React App](https://create-react-app.d
 - [Recharts](https://recharts.org/en-US/)
 
 #### Launching the project
-- Fork this repository
+- Fork this repository -> [frontend](https://github.com/maxime-rl/maxime-robil-lepretre_12_06092021)
 - Clone it on your computer
 #### Getting started & usage
 `install: yarn`<br>
