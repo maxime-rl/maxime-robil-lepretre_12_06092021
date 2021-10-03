@@ -7,7 +7,7 @@
 [Kanban](https://www.notion.so/Tableau-de-bord-SportSee-6686aa4b5f44417881a4884c9af5669e)  | 
 [Maquette prototype](https://www.figma.com/file/BMomGVZqLZb811mDMShpLu/UI-design-Sportify-FR)
 
-## Prerequisites
+## 0.Prerequisites
 - [NodeJS (version 12.18)](https://nodejs.org/en/)
 - [Yarn](https://yarnpkg.com/)
 
@@ -25,11 +25,11 @@
 ## 2.Frontend
 
 #### Features
-- React-router-dom
-- Axios
-- Prop-types
-- Styled-components
-- Recharts
+- [React-router-dom](https://reactrouter.com/web/guides/quick-start)
+- [Axios](https://axios-http.com/docs/example)
+- [Prop-types](https://fr.reactjs.org/docs/typechecking-with-proptypes.html)
+- [Styled-components](https://styled-components.com/docs)
+- [Recharts](https://recharts.org/en-US/)
 
 #### Launching the project
 - Fork this repository
