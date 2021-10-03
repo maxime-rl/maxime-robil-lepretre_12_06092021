@@ -11,18 +11,16 @@
 - [NodeJS (version 12.18)](https://nodejs.org/en/)
 - [Yarn](https://yarnpkg.com/)
 
----
 
 ## 1.Backend
 
 #### Launching the project
 - Fork the repository -> [backend](https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard)
 - Clone it on your computer
-###### Getting started & usage
+#### Getting started & usage
 `install: yarn`<br>
 `dev: yarn dev`
 
----
 
 ## 2.Frontend
 
@@ -36,7 +34,7 @@
 #### Launching the project
 - Fork this repository
 - Clone it on your computer
-###### Getting started & usage
-`install: yarn`
+#### Getting started & usage
+`install: yarn`<br>
 `dev: yarn start`<br>
 `build: yarn build`
