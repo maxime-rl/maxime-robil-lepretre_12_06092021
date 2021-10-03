@@ -7,6 +7,9 @@
 [Kanban](https://www.notion.so/Tableau-de-bord-SportSee-6686aa4b5f44417881a4884c9af5669e)  | 
 [Maquette prototype](https://www.figma.com/file/BMomGVZqLZb811mDMShpLu/UI-design-Sportify-FR)
 
+## Deployment
+Branch api-mocked -> [![Netlify Status](https://api.netlify.com/api/v1/badges/4198176e-f40e-4838-9755-9fd9d0f2c457/deploy-status)](https://app.netlify.com/sites/maxime-robil-lepretre-p12-oc/deploys)
+
 ## 0.Prerequisites
 - [NodeJS (version 12.18)](https://nodejs.org/en/)
 - [Yarn](https://yarnpkg.com/)
