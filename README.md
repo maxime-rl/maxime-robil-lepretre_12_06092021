@@ -23,6 +23,7 @@
 
 
 ## 2.Frontend
+This project was bootstrapped with [Create React App](https://create-react-app.dev/).
 
 #### Features
 - [React-router-dom](https://reactrouter.com/web/guides/quick-start)
