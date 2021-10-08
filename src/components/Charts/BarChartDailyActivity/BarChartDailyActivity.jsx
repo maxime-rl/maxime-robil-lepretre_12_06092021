@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { getUserFetchData } from "../../../services/fetchSportSeeAPI";
+// import { getUserFetchData } from "../../../services/fetchSportSeeAPI";
+import { fetchUserActivity } from "../../../services/fetchSportSeeAPI";
 import * as S from "./BarChartDailyActivity.styled";
 import { variablesStyle } from "../../../utils/styles/variables";
 import {
@@ -28,8 +29,8 @@ export default function BarChartDailyActivity({ userId }) {
    */
   useEffect(() => {
     const getData = async () => {
-      const response = await getUserFetchData(userId, "activity");
-      const sessions = response.data.sessions;
+      const response = await fetchUserActivity(userId);
+      const sessions = response.sessions;
 
       for (let i = 0; i < sessions.length; i++) {
         sessions[i] = {

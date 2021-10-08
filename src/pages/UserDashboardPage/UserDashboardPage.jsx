@@ -10,7 +10,8 @@ import {
   PieChartScore,
 } from "../../components";
 import * as S from "./UserDashboardPage.styled";
-import { getUserFetchData } from "../../services/fetchSportSeeAPI";
+import { fetchUserInfos } from "../../services/fetchSportSeeAPI";
+import ErrorPage from "../ErrorPage/ErrorPage";
 
 /**
  * Create a UserDashboardPage page component
@@ -18,6 +19,8 @@ import { getUserFetchData } from "../../services/fetchSportSeeAPI";
  */
 export default function UserDashboardPage() {
   const [data, setData] = useState([]);
+  const [error, setError] = useState(null);
+
   let { userId } = useParams();
 
   /**
@@ -27,13 +30,18 @@ export default function UserDashboardPage() {
    */
   useEffect(() => {
     const getData = async () => {
-      const response = await getUserFetchData(userId);
+      const response = await fetchUserInfos(userId);
 
-      setData(response.data);
+      if (!response) {
+        setError(true);
+      }
+
+      setData(response);
     };
     getData();
   }, [userId]);
 
+  if (error) return <ErrorPage />;
   if (data.length === 0) return null;
 
   const { userInfos, keyData } = data;

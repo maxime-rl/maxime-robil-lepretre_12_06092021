@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { getUserFetchData } from "../../../services/fetchSportSeeAPI";
+// import { getUserFetchData } from "../../../services/fetchSportSeeAPI";
+import { fetchUserAverageSessions } from "../../../services/fetchSportSeeAPI";
 import {
   LineChart,
   ResponsiveContainer,
@@ -27,8 +28,8 @@ export default function LineChartAverageSessions({ userId }) {
    */
   useEffect(() => {
     const getData = async () => {
-      const response = await getUserFetchData(userId, "average-sessions");
-      const averageSessionsData = response.data.sessions;
+      const response = await fetchUserAverageSessions(userId);
+      const averageSessionsData = response.sessions;
 
       setData(averageSessionsData);
     };

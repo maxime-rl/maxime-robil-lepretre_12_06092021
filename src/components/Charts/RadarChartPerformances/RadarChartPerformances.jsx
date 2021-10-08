@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { getUserFetchData } from "../../../services/fetchSportSeeAPI";
+// import { getUserFetchData } from "../../../services/fetchSportSeeAPI";
+import { fetchUserPerformance } from "../../../services/fetchSportSeeAPI";
 import {
   Radar,
   RadarChart,
@@ -27,10 +28,9 @@ export default function RadarChartPerformances({ userId }) {
    */
   useEffect(() => {
     const getData = async () => {
-      const response = await getUserFetchData(userId, "performance");
-      const performancesData = response.data.data;
+      const response = await fetchUserPerformance(userId);
 
-      setData(performancesData);
+      setData(response.data);
     };
     getData();
   }, [userId]);
