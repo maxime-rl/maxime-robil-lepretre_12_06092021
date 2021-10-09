@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { getUserFetchData } from "../../../services/fetchSportSeeAPI";
+// import { getUserFetchData } from "../../../services/fetchSportSeeAPI";
+import { fetchUserInfos } from "../../../services/fetchSportSeeAPI";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 import * as S from "./PieChartScore.styled";
 import { variablesStyle } from "../../../utils/styles/variables";
@@ -20,28 +21,29 @@ export default function PieChartScore({ userId }) {
    */
   useEffect(() => {
     const getData = async () => {
-      const response = await getUserFetchData(userId);
-      const scoreData = response.data;
+      const response = await fetchUserInfos(userId);
 
-      setData(scoreData);
+      setData(response);
     };
     getData();
   }, [userId]);
 
+  const dataUserScore = data.todayScore || data.score;
+
   /**
    * Transformation of score data into percentage
    */
-  const percentageScoreValue = (data.todayScore || data.score) * 100;
+  const percentageScoreValue = dataUserScore * 100;
 
   /**
    * Array with a new score used for the comparison between score data and 1
    */
   const score = [
     {
-      scoreValue: data.todayScore || data.score,
+      scoreValue: dataUserScore,
     },
     {
-      scoreValue: 1 - (data.todayScore || data.score),
+      scoreValue: 1 - dataUserScore,
     },
   ];
 
