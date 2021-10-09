@@ -28,20 +28,22 @@ export default function PieChartScore({ userId }) {
     getData();
   }, [userId]);
 
+  const dataUserScore = data.todayScore || data.score;
+
   /**
    * Transformation of score data into percentage
    */
-  const percentageScoreValue = (data.todayScore || data.score) * 100;
+  const percentageScoreValue = dataUserScore * 100;
 
   /**
    * Array with a new score used for the comparison between score data and 1
    */
   const score = [
     {
-      scoreValue: data.todayScore || data.score,
+      scoreValue: dataUserScore,
     },
     {
-      scoreValue: 1 - (data.todayScore || data.score),
+      scoreValue: 1 - dataUserScore,
     },
   ];
 
