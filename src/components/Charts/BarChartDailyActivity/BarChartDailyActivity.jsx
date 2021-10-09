@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-// import { getUserFetchData } from "../../../services/fetchSportSeeAPI";
 import { fetchUserActivity } from "../../../services/fetchSportSeeAPI";
 import { changeDayKeyActivitySessions } from "../../../services/utils/activity/changeDayKeyActivitySessions";
 import * as S from "./BarChartDailyActivity.styled";

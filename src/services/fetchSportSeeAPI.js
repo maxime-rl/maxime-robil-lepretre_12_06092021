@@ -27,7 +27,7 @@ export async function fetchUserInfos(userId) {
 
 /**
  * Async function to fetch user activity on sportSee API
- * Endpoint => user/${userId}
+ * Endpoint => user/${userId}/activity
  * @param {string} userId
  * @requires module:models/UserActivityModel
  * @returns {Object|undefined} data user activity or error

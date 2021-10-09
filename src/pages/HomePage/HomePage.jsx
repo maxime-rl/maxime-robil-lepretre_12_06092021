@@ -15,9 +15,9 @@ export default function HomePage() {
             <S.li>
               <S.a to="/user/12">Utilisateur 12</S.a>
             </S.li>
-            <li>
+            <S.li>
               <S.a to="/user/18">Utilisateur 18</S.a>
-            </li>
+            </S.li>
           </S.ul>
         </nav>
       </S.main>
