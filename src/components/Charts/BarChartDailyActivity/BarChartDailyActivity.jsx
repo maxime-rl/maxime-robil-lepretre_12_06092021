@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { getUserMockedData } from "../../../services/fetchSportSeeMockedData";
+import { fetchUserActivity } from "../../../services/fetchSportSeeMockedData";
+import { changeDayKeyActivitySessions } from "../../../services/utils/activity/changeDayKeyActivitySessions";
 import * as S from "./BarChartDailyActivity.styled";
 import { variablesStyle } from "../../../utils/styles/variables";
 import {
@@ -23,22 +24,18 @@ export default function BarChartDailyActivity({ userId }) {
 
   /**
    * Activity data recovery
-   * @requires module:services/getUserMockedData
+   * @requires module:services/fetchSportSeeMockedData
+   * @requires module:services/utils/activity/changeDatesActivitySessions
    * @returns {object} data
    */
   useEffect(() => {
     const getData = async () => {
-      const response = await getUserMockedData(userId, "activity");
-      const sessions = response.data.sessions;
+      const response = await fetchUserActivity(userId);
+      const dataActivitySessions = response.sessions;
 
-      for (let i = 0; i < sessions.length; i++) {
-        sessions[i] = {
-          ...sessions[i],
-          day: i + 1,
-        };
-      }
+      changeDayKeyActivitySessions(dataActivitySessions);
 
-      setData(sessions);
+      setData(dataActivitySessions);
     };
     getData();
   }, [userId]);

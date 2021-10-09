@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { getUserMockedData } from "../../../services/fetchSportSeeMockedData";
+import { fetchUserPerformance } from "../../../services/fetchSportSeeMockedData";
+import { changeKindKeyPerformance } from "../../../services/utils/performance/changeKindKeyPerformance";
 import {
   Radar,
   RadarChart,
@@ -22,38 +23,21 @@ export default function RadarChartPerformances({ userId }) {
 
   /**
    * Performance data recovery
-   * @requires module:services/getUserMockedData
+   * @requires module:services/fetchSportSeeMockedData
+   * @requires module:services/utils/performance/changeKindKeyPerformance
    * @returns {object} data
    */
   useEffect(() => {
     const getData = async () => {
-      const response = await getUserMockedData(userId, "performance");
-      const performancesData = response.data.data;
+      const response = await fetchUserPerformance(userId);
+      const dataPerformance = response.data;
 
-      setData(performancesData);
+      changeKindKeyPerformance(dataPerformance);
+
+      setData(dataPerformance);
     };
     getData();
   }, [userId]);
-
-  /**
-   * Create new object for UI performance kind
-   */
-  const performanceKind = {
-    1: "Intensité",
-    2: "Vitesse",
-    3: "Force",
-    4: "Endurance",
-    5: "Energie",
-    6: "Cardio",
-  };
-
-  /**
-   * Editing data with the new UI performance kind object
-   */
-  const performances = data.map((elt) => ({
-    value: elt.value,
-    kind: performanceKind[elt.kind],
-  }));
 
   return (
     <S.container>
@@ -61,7 +45,7 @@ export default function RadarChartPerformances({ userId }) {
       {/* START RadarChart */}
       <ResponsiveContainer width="100%" height="100%" aspect={1}>
         <RadarChart
-          data={performances}
+          data={data}
           height={258}
           width={258}
           margin={{ top: 15, right: 25, left: 25, bottom: 15 }}

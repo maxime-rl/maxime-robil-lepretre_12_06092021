@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { getUserMockedData } from "../../../services/fetchSportSeeMockedData";
+import { fetchUserAverageSessions } from "../../../services/fetchSportSeeMockedData";
+import { changeDayKeyAverageSessions } from "../../../services/utils/averageSessions/changeDayKeyAverageSessions";
 import {
   LineChart,
   ResponsiveContainer,
@@ -22,39 +23,21 @@ export default function LineChartAverageSessions({ userId }) {
 
   /**
    * Average-sessions data recovery
-   * @requires module:services/getUserMockedData
+   * @requires module:services/fetchSportSeeMockedData
+   * @requires module:services/utils/averageSessions/changeDayKeyAverageSessions
    * @returns {object} data
    */
   useEffect(() => {
     const getData = async () => {
-      const response = await getUserMockedData(userId, "average-sessions");
-      const averageSessionsData = response.data.sessions;
+      const response = await fetchUserAverageSessions(userId);
+      const dataAverageSessions = response.sessions;
 
-      setData(averageSessionsData);
+      changeDayKeyAverageSessions(dataAverageSessions);
+
+      setData(dataAverageSessions);
     };
     getData();
   }, [userId]);
-
-  /**
-   * Create new object for the initials of the days of the week
-   */
-  const daysOfTheWeek = {
-    1: "L",
-    2: "M",
-    3: "M",
-    4: "J",
-    5: "V",
-    6: "S",
-    7: "D",
-  };
-
-  /**
-   * Editing data using the initials of the days of the week
-   */
-  const averageSessions = data.map((elt) => ({
-    day: daysOfTheWeek[elt.day],
-    sessionLength: elt.sessionLength,
-  }));
 
   return (
     <S.container>
@@ -62,7 +45,7 @@ export default function LineChartAverageSessions({ userId }) {
       {/* START LineChart */}
       <ResponsiveContainer width="100%" height="100%" aspect={1}>
         <LineChart
-          data={averageSessions}
+          data={data}
           width={258}
           height={258}
           margin={{ top: 0, right: 15, left: 15, bottom: 20 }}
