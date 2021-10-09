@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-// import { getUserFetchData } from "../../../services/fetchSportSeeAPI";
 import { fetchUserInfos } from "../../../services/fetchSportSeeAPI";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 import * as S from "./PieChartScore.styled";
